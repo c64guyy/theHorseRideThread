@@ -167,12 +167,13 @@ void printMenu() {
  
                 
             thread threads[4];
-            for (int i = 0; i < numCavalli; i++)
+            for (int i = 0; i < numCavalli; i++) {
                 threads[i] = thread(race, i);
- 
-                
-            for (int i = 0; i < numCavalli; i++)
+            }
+                    
+            for (int i = 0; i < numCavalli; i++) {
                 threads[i].join();
+            }   
 
             if (scommessa >= 1 && scommessa <= numCavalli) {
                 if (winnerId == scommessa - 1) {
